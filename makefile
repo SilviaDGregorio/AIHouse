@@ -2,7 +2,7 @@
 main: bin/main
 bin/main: src/main.cpp AIHouse.o
 	mkdir -p bin
-	g++ -o bin/main src/main.cpp AIHouse.o 
+	g++ -o bin/main src/main.cpp AIHouse.o -O0
 AIHouse.o: src/AIHouse.cpp include/AIHouse.h
 	g++ -c src/AIHouse.cpp
 clean:

@@ -4,6 +4,6 @@
 using namespace std;
 
 int main(){
-
-	cout<<"Hola"<<endl;
+AIHouse * aihouse= new AIHouse(100);
+	aihouse->calculatePower();
 }

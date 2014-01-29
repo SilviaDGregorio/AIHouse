@@ -1,11 +1,16 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <sstream>
 class AIHouse{
 public:
 	AIHouse();
-	AIHouse(double _consumo);
+	AIHouse(double _power);
 	~AIHouse();
-	double getConsumo();
-	void setConsumo(double _consumo);
+	double getPower();
+	void setConsumo(double _power);
+	void calculatePower();
 private:
-	double consumo;
+	double power;
 };
