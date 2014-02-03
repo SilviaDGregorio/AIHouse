@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 AIHouse * aihouse= new AIHouse(100);
-	aihouse->calculatePower();
+	aihouse->readComponents();
 
 
    /* std::cout << "The map has " << aihouse->getComponentsMap().size() << " enrties:\n";

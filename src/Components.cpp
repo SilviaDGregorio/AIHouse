@@ -10,14 +10,14 @@
 		minPower=_min;
 		maxPower=_max;
 
-	}
+	};
 	Components::Components(Components * _com){
 		name=_com->name;
 		minPower=_com->minPower;
 		maxPower=_com->maxPower;
-	}
+	};
+	Components::~Components(){name="";};
 	void Components::setName(string _name){
-		printf("%s\n", _name.c_str());
 		name=_name;
 	};
 	
