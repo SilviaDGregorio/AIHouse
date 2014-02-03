@@ -4,10 +4,10 @@
 #include <vector>
 #include <sstream>
 #include "../include/Components.h"
-#include <unordered_map>
+#include <map>
 class AIHouse{
 public:
-	typedef std::unordered_map<std::string, double> ComponentsMap;
+	typedef std::map<std::string, double> ComponentsMap;
 	AIHouse();
 	AIHouse(double _power);
 	~AIHouse();
@@ -16,6 +16,7 @@ public:
 	void calculatePower();
 	void readComponents();
 	ComponentsMap getComponentsMap(){return componentsMap;};
+	vector<Components::pointer> recursivo(double power,double cantalmacenada,vector<Components::pointer> vectorfinal,std::map<string,double>::iterator it);
 private:
 	double power;
 	vector<Components::pointer> componentsVector;

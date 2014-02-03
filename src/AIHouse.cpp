@@ -13,6 +13,10 @@ using namespace std;
 	
 
 	}
+	AIHouse::~AIHouse(){
+		
+
+	};
 	AIHouse::AIHouse(double _power){
 		power=_power;
 	}
@@ -33,10 +37,8 @@ using namespace std;
     			ss>>buf;
     			component->setName(buf);
     			ss>>buf;
-    			component->setMin(atof(buf.c_str()));
-    			ss>>buf;
-    			component->setMax(atof(buf.c_str()));
-    			componentsMap[component->getName()]=(component->getMin()-component->getMax());
+    			component->setPower(atof(buf.c_str()));
+    			componentsMap[component->getName()]=component->getPower();
     			componentsVector.push_back(component);
     			cout<<buf<<endl;
  			}
@@ -47,5 +49,34 @@ using namespace std;
 
 	}
 	void AIHouse::calculatePower(){
+		vector<Components::pointer> vectorfinal;
+		std::map<string,double>::iterator it=componentsMap.begin();
+		recursivo(power,0,vectorfinal,it);
+
+	}
+	vector<Components::pointer> AIHouse::recursivo(double power,double cantalmacenada,vector<Components::pointer> vectorfinal,std::map<string,double>::iterator it){
+	Components::pointer component(new Components);
+
+		if(cantalmacenada==power){
+			cout<<"final"<<endl;
+			return vectorfinal;
+		}
+		else{
+			if(power-it->second>=0){
+				{
+				
+				component->setName(it->first);
+				component->setPower(it->second);
+				vectorfinal.push_back(component);
+				cout<<component->getName()<<endl;
+				recursivo(power,(cantalmacenada+it->second),vectorfinal,it);
+				}
+			}
+			else{
+				recursivo(power,cantalmacenada,vectorfinal,it++);
+			}
+
+		}
+
 
 	}

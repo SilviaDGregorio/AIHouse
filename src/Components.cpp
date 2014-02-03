@@ -2,19 +2,16 @@
 
 	Components::Components(){
 		name="";
-		minPower=0.0;
-		maxPower=0.0;
+		power=0.0;
 	};
-	Components::Components(string _name, double _min, double _max){
+	Components::Components(string _name, double _power){
 		name=_name;
-		minPower=_min;
-		maxPower=_max;
+		power=_power;
 
 	};
 	Components::Components(Components * _com){
 		name=_com->name;
-		minPower=_com->minPower;
-		maxPower=_com->maxPower;
+		power=_com->power;
 	};
 	Components::~Components(){name="";};
 	void Components::setName(string _name){

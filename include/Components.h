@@ -9,19 +9,18 @@ class Components{
 public:
 	typedef shared_ptr<Components> pointer;
 	Components();
-	Components(string _name, double _min, double _max);
+	Components(string _name, double power);
 	~Components();
 	Components(Components* _com);
 	void setName(string _name);
-	void setMin(double _min){minPower=_min;};
-	void setMax(double _max){maxPower=_max;};
+	void setPower(double _power){power=_power;};
+
 	string getName(){return name;};
-	double getMin(){return minPower;};
-	double getMax(){return maxPower;};
+	double getPower(){return power;};
+
 
 
 private:
 	string name;
-	double minPower;
-	double maxPower;
+	double power;
 };
