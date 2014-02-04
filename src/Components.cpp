@@ -13,7 +13,10 @@
 		name=_com->name;
 		power=_com->power;
 	};
-	Components::~Components(){name="";};
+	Components::~Components(){
+		name="";
+		power=0.0;
+	};
 	void Components::setName(string _name){
 		name=_name;
 	};
