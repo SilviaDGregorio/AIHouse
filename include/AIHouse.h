@@ -16,7 +16,8 @@ public:
 	void calculatePower();
 	void readComponents();
 	ComponentsMap getComponentsMap(){return componentsMap;};
-	vector<Components::pointer> recursivo(double power,double &cantalmacenada,vector<Components::pointer> vectorfinal,std::map<string,double>::iterator it);
+	vector<Components::pointer> recursivo(double power,double &cantalmacenada,vector<Components::pointer> vectorfinal,std::map<string,double>::iterator it,unsigned iterator);
+	std::map<string,double>::iterator itIncrement(std::map<string,double>::iterator it);
 private:
 	double power;
 	ComponentsMap componentsMap;

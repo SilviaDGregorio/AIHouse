@@ -51,19 +51,19 @@ using namespace std;
 		vector<Components::pointer> vectorfinal;
 		std::map<string,double>::iterator it=componentsMap.begin();
 		double p=0.0;
-		vectorfinal=recursivo(power,p,vectorfinal,it);
+		vectorfinal=recursivo(power,p,vectorfinal,it,1);
 		cout<<vectorfinal.size()<<endl;
 		for(Components::pointer p:vectorfinal){
 				cout<<p->getName()<<endl;
 			}
 
 	}
-	 vector<Components::pointer> AIHouse::recursivo(double power,double &cantalmacenada,vector<Components::pointer> vectorfinal,std::map<string,double>::iterator it){
+	 vector<Components::pointer> AIHouse::recursivo(double power,double &cantalmacenada,vector<Components::pointer> vectorfinal,std::map<string,double>::iterator it,unsigned iterator){
 	Components::pointer component(new Components);
 		if(cantalmacenada==power){
 			return vectorfinal;
 		}
-		else if(it==componentsMap.end()){	
+		else if(iterator>componentsMap.size()){	
 			return vectorfinal;
 		}
 		else{
@@ -78,21 +78,28 @@ using namespace std;
 					
 					cant1=cantalmacenada+component->getPower();
 					
-					vectorfinal1 = recursivo(power,cant1,vectorfinal,++it);
+					vectorfinal1 = recursivo(power,cant1,vectorfinal,++it,++iterator);
 					it--;
+					iterator--;
 					vectorfinal.erase(vectorfinal.end());	
 					
 				}
 				cant2=cantalmacenada;
 									
-				vectorfinal2=recursivo(power,cant2,vectorfinal,++it);
+				vectorfinal2=recursivo(power,cant2,vectorfinal,++it,++iterator);
 				if(cant1>cant2){
 					vectorfinal=vectorfinal1;
+					cantalmacenada=cant1;
 				}
 				else{
 					vectorfinal=vectorfinal2;
+					cantalmacenada=cant2;
 				}				
 			
 		}
 		return vectorfinal;
+	}
+	std::map<string,double>::iterator AIHouse::itIncrement(std::map<string,double>::iterator it){
+		std::map<string,double>::iterator iter=++it;
+		return iter;
 	}
