@@ -3,6 +3,7 @@
 	Components::Components(){
 		name="";
 		power=0.0;
+
 	};
 	Components::Components(string _name, double _power){
 		name=_name;
