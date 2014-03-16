@@ -21,7 +21,7 @@ using namespace std;
 		power=_power;
 	}
 	void AIHouse::readComponents(){
-		string cadena;
+        /*string cadena;
 		vector<string> listastring;
 		ifstream myReadFile;
 		string buf; // Have a buffer string
@@ -43,50 +43,51 @@ using namespace std;
 		}
 		cout<<componentsMap.size()<<endl;
 		myReadFile.close();
-		/*for(auto i=componentsMap.begin(); i!=componentsMap.end(); ++i)
+        for(auto i=componentsMap.begin(); i!=componentsMap.end(); ++i)
         std::cout << i->first << " => " << i->second << '\n';
 	*/
 	}
-	void AIHouse::calculatePower(){
+    vector<Components::pointer> AIHouse::calculatePower(){
 		vector<Components::pointer> vectorfinal;
-		std::map<string,double>::iterator it=componentsMap.begin();
+
 		double p=0.0;
-		vectorfinal=recursivo(power,p,vectorfinal,it,1);
+        vectorfinal=recursivo(power,p,vectorfinal,0);
 		cout<<vectorfinal.size()<<endl;
 		for(Components::pointer p:vectorfinal){
 				cout<<p->getName()<<endl;
 			}
-
+    return vectorfinal;
 	}
-	 vector<Components::pointer> AIHouse::recursivo(double power,double &cantalmacenada,vector<Components::pointer> vectorfinal,std::map<string,double>::iterator it,unsigned iterator){
+     vector<Components::pointer> AIHouse::recursivo(double power,double &cantalmacenada,vector<Components::pointer> vectorfinal,unsigned iterator){
 	Components::pointer component(new Components);
 		if(cantalmacenada==power){
 			return vectorfinal;
 		}
-		else if(iterator>componentsMap.size()){	
+        else if(iterator>=componentsVector.size()){
 			return vectorfinal;
 		}
 		else{
 
 				double cant1=0.0, cant2=0.0;
 				vector<Components::pointer> vectorfinal1,vectorfinal2;
-				if(cantalmacenada+it->second<=power){
+                if(cantalmacenada+componentsVector.at(iterator)->getPower()<=power){
 					
-					component->setName(it->first);
-					component->setPower(it->second);
+                    component->setName(componentsVector.at(iterator)->getName());
+                    component->setPower(componentsVector.at(iterator)->getPower());
+                    component->setLabel(componentsVector.at(iterator)->getButton());
 					vectorfinal.push_back(component);
 					
 					cant1=cantalmacenada+component->getPower();
 					
-					vectorfinal1 = recursivo(power,cant1,vectorfinal,++it,++iterator);
-					it--;
+                    vectorfinal1 = recursivo(power,cant1,vectorfinal,++iterator);
+
 					iterator--;
 					vectorfinal.erase(vectorfinal.end());	
 					
 				}
 				cant2=cantalmacenada;
 									
-				vectorfinal2=recursivo(power,cant2,vectorfinal,++it,++iterator);
+                vectorfinal2=recursivo(power,cant2,vectorfinal,++iterator);
 				if(cant1>cant2){
 					vectorfinal=vectorfinal1;
 					cantalmacenada=cant1;
@@ -99,7 +100,7 @@ using namespace std;
 		}
 		return vectorfinal;
 	}
-	std::map<string,double>::iterator AIHouse::itIncrement(std::map<string,double>::iterator it){
-		std::map<string,double>::iterator iter=++it;
+    int AIHouse::itIncrement(int it){
+        int iter=++it;
 		return iter;
 	}

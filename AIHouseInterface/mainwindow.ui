@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>904</width>
-    <height>629</height>
+    <width>957</width>
+    <height>797</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="LightButton">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>310</y>
+      <x>20</x>
+      <y>400</y>
       <width>80</width>
       <height>71</height>
      </rect>
@@ -36,8 +36,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>310</y>
+      <x>120</x>
+      <y>400</y>
       <width>80</width>
       <height>71</height>
      </rect>
@@ -49,8 +49,8 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>310</y>
+      <x>220</x>
+      <y>400</y>
       <width>80</width>
       <height>71</height>
      </rect>
@@ -62,30 +62,14 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>310</y>
+      <x>320</x>
+      <y>400</y>
       <width>80</width>
       <height>71</height>
      </rect>
     </property>
     <property name="text">
      <string>PC</string>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBoxComponents">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>10</y>
-      <width>451</width>
-      <height>271</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>UpArrowCursor</cursorShape>
-    </property>
-    <property name="title">
-     <string>Components</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -101,13 +85,54 @@
      <string>Add Component</string>
     </property>
    </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>0</y>
+      <width>411</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="spacing">
+      <number>1</number>
+     </property>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>70</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete Component</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>110</y>
+      <width>121</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Is ON?</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>904</width>
+     <width>957</width>
      <height>20</height>
     </rect>
    </property>

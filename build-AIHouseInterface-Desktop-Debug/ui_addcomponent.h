@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'addcomponent.ui'
 **
-** Created: Thu Mar 13 16:28:57 2014
+** Created: Thu Mar 13 16:27:55 2014
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

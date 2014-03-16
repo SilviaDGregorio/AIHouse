@@ -7,18 +7,18 @@
 #include <map>
 class AIHouse{
 public:
-	typedef std::map<std::string, double> ComponentsMap;
+    std::vector<Components::pointer> componentsVector;
 	AIHouse();
 	AIHouse(double _power);
 	~AIHouse();
 	double getPower();
 	void setConsumo(double _power);
-	void calculatePower();
+    vector<Components::pointer> calculatePower();
 	void readComponents();
-	ComponentsMap getComponentsMap(){return componentsMap;};
-	vector<Components::pointer> recursivo(double power,double &cantalmacenada,vector<Components::pointer> vectorfinal,std::map<string,double>::iterator it,unsigned iterator);
-	std::map<string,double>::iterator itIncrement(std::map<string,double>::iterator it);
+    std::vector<Components::pointer>  getComponentsMap(){return componentsVector;};
+    vector<Components::pointer> recursivo(double power,double &cantalmacenada,vector<Components::pointer> vectorfinal,unsigned iterator);
+    int itIncrement(int index);
 private:
 	double power;
-	ComponentsMap componentsMap;
+
 };

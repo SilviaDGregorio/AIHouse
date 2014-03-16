@@ -1,13 +1,13 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'addcomponent.h'
 **
-** Created: Thu Mar 13 16:29:01 2014
+** Created: Thu Mar 13 16:27:59 2014
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "addcomponent.h"
+#include "../AIHouseInterface/addcomponent.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'addcomponent.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63

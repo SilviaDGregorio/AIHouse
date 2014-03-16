@@ -6,7 +6,7 @@
 #include <QLabel>
 #include "addcomponent.h"
 #include <QDir>
-
+#include <QSignalMapper>
 namespace Ui {
 class MainWindow;
 }
@@ -25,6 +25,9 @@ private slots:
     void on_LightButton_clicked();
 
     void on_pushButton_clicked();
+
+    void handleButton(QString pstring);
+    void on_pushButton_6_clicked();
 
 private:
     Ui::MainWindow *ui;
