@@ -1,8 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'addcomponent.ui'
 **
-** Created: Thu Mar 13 16:28:57 2014
-**      by: Qt User Interface Compiler version 4.8.1
+** Created by: Qt User Interface Compiler version 5.2.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -37,30 +36,30 @@ public:
     void setupUi(QDialog *AddComponent)
     {
         if (AddComponent->objectName().isEmpty())
-            AddComponent->setObjectName(QString::fromUtf8("AddComponent"));
+            AddComponent->setObjectName(QStringLiteral("AddComponent"));
         AddComponent->resize(400, 300);
         buttonBox = new QDialogButtonBox(AddComponent);
-        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
         buttonBox->setGeometry(QRect(30, 240, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
         label = new QLabel(AddComponent);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(10, 40, 57, 15));
         label_2 = new QLabel(AddComponent);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(10, 90, 57, 15));
         label_3 = new QLabel(AddComponent);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(10, 140, 57, 15));
         lineEditName = new QLineEdit(AddComponent);
-        lineEditName->setObjectName(QString::fromUtf8("lineEditName"));
+        lineEditName->setObjectName(QStringLiteral("lineEditName"));
         lineEditName->setGeometry(QRect(70, 40, 113, 23));
         lineEditPower = new QLineEdit(AddComponent);
-        lineEditPower->setObjectName(QString::fromUtf8("lineEditPower"));
+        lineEditPower->setObjectName(QStringLiteral("lineEditPower"));
         lineEditPower->setGeometry(QRect(70, 140, 113, 23));
         comboBoxType = new QComboBox(AddComponent);
-        comboBoxType->setObjectName(QString::fromUtf8("comboBoxType"));
+        comboBoxType->setObjectName(QStringLiteral("comboBoxType"));
         comboBoxType->setGeometry(QRect(70, 90, 79, 23));
 
         retranslateUi(AddComponent);
